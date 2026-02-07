@@ -1,0 +1,71 @@
+'use client'
+
+import { Lock, Unlock, TrendingDown, TrendingUp, Shield } from 'lucide-react'
+import { motion } from 'framer-motion'
+
+export default function Dashboard() {
+  const locked = false
+
+  return (
+    <main className="min-h-screen bg-zinc-950 text-white p-6">
+      {/* Header */}
+      <header className="flex justify-between items-center mb-10">
+        <div>
+          <h1 className="text-2xl font-bold">TradeLock Dashboard</h1>
+          <p className="text-zinc-400 text-sm">Discipline mode active</p>
+        </div>
+        <div className="flex items-center gap-2">
+          <Shield className="text-green-500" />
+          <span className="text-sm text-zinc-300">FTMO Preset</span>
+        </div>
+      </header>
+
+      {/* Account Overview */}
+      <section className="grid md:grid-cols-3 gap-6 mb-10">
+        <div className="bg-zinc-900 p-6 rounded-2xl">
+          <p className="text-zinc-400 text-sm">Account Balance</p>
+          <h2 className="text-3xl font-bold mt-2">£50,000</h2>
+        </div>
+        <div className="bg-zinc-900 p-6 rounded-2xl">
+          <p className="text-zinc-400 text-sm">Daily Drawdown Left</p>
+          <h2 className="text-3xl font-bold mt-2 text-green-500">£2,500</h2>
+        </div>
+        <div className="bg-zinc-900 p-6 rounded-2xl">
+          <p className="text-zinc-400 text-sm">Overall Drawdown Left</p>
+          <h2 className="text-3xl font-bold mt-2 text-green-500">£5,000</h2>
+        </div>
+      </section>
+
+      {/* Lock State */}
+      <motion.section
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        className={`p-8 rounded-2xl mb-10 ${locked ? 'bg-red-900/30' : 'bg-green-900/20'}`}
+      >
+        <div className="flex items-center gap-4">
+          {locked ? <Lock className="text-red-500" size={32} /> : <Unlock className="text-green-500" size={32} />}
+          <div>
+            <h3 className="text-xl font-semibold">
+              {locked ? 'Trading Locked' : 'Trading Allowed'}
+            </h3>
+            <p className="text-zinc-400">
+              {locked
+                ? 'Risk limits reached. Trading disabled.'
+                : 'All rules respected. You may trade.'}
+            </p>
+          </div>
+        </div>
+      </motion.section>
+
+      {/* Actions */}
+      <section className="grid md:grid-cols-2 gap-6">
+        <button className="bg-green-600 hover:bg-green-500 transition p-6 rounded-2xl flex items-center justify-center gap-3">
+          <TrendingUp /> Log Win
+        </button>
+        <button className="bg-red-600 hover:bg-red-500 transition p-6 rounded-2xl flex items-center justify-center gap-3">
+          <TrendingDown /> Log Loss
+        </button>
+      </section>
+    </main>
+  )
+}
