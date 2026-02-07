@@ -1,0 +1,81 @@
+'use client'
+
+export default function Home() {
+  return (
+    <main className="min-h-screen bg-zinc-950 text-white">
+      {/* Hero */}
+      <section className="px-6 py-20 max-w-6xl mx-auto text-center">
+        <h1 className="text-4xl md:text-6xl font-bold mb-6">
+          Stop breaking trading rules.<br />
+          <span className="text-green-500">TradeLock stops you.</span>
+        </h1>
+        <p className="text-zinc-400 max-w-2xl mx-auto mb-8">
+          TradeLock is a discipline-first trading dashboard that enforces risk,
+          sessions, and prop firm rules automatically — so you don’t blow accounts.
+        </p>
+        <div className="flex justify-center gap-4">
+          <a href="/signup" className="bg-green-600 px-6 py-3 rounded-lg font-semibold">Start Free</a>
+          <a href="#how" className="bg-zinc-800 px-6 py-3 rounded-lg">See How It Works</a>
+        </div>
+      </section>
+
+      {/* Problem */}
+      <section className="px-6 py-16 max-w-5xl mx-auto">
+        <h2 className="text-3xl font-bold mb-6">Why traders actually fail</h2>
+        <ul className="space-y-3 text-zinc-400">
+          <li>• Overtrading after a loss</li>
+          <li>• Revenge trading</li>
+          <li>• Ignoring daily max loss rules</li>
+          <li>• Breaking prop firm conditions</li>
+        </ul>
+      </section>
+
+      {/* Solution */}
+      <section id="how" className="px-6 py-16 bg-zinc-900">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-3xl font-bold mb-6">TradeLock fixes this by force</h2>
+          <ul className="grid md:grid-cols-2 gap-6 text-zinc-300">
+            <li>🔒 Hard trade lockouts when rules are hit</li>
+            <li>📊 Session-based trading control</li>
+            <li>🏦 One-click prop firm presets</li>
+            <li>🧠 Emotion-free execution</li>
+          </ul>
+        </div>
+      </section>
+
+      {/* Pricing */}
+      <section className="px-6 py-20 max-w-5xl mx-auto">
+        <h2 className="text-3xl font-bold mb-10 text-center">Simple pricing</h2>
+        <div className="grid md:grid-cols-2 gap-8">
+          <div className="border border-zinc-800 p-6 rounded-xl">
+            <h3 className="text-xl font-semibold mb-2">Free</h3>
+            <p className="text-zinc-400 mb-4">For discipline testing</p>
+            <ul className="space-y-2 text-zinc-400">
+              <li>• Manual Win/Loss logging</li>
+              <li>• Single account</li>
+              <li>• Basic stats</li>
+            </ul>
+          </div>
+          <div className="border border-green-600 p-6 rounded-xl">
+            <h3 className="text-xl font-semibold mb-2">Pro – £19/month</h3>
+            <p className="text-zinc-400 mb-4">For serious traders</p>
+            <ul className="space-y-2 text-zinc-300">
+              <li>• Prop firm presets (FTMO, MFF)</li>
+              <li>• Unlimited sessions</li>
+              <li>• Analytics & history</li>
+              <li>• Multi-account support</li>
+            </ul>
+            <a href="/signup" className="block text-center bg-green-600 mt-6 py-3 rounded-lg font-semibold">
+              Upgrade to Pro
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="text-center text-zinc-500 text-sm py-10">
+        TradeLock does not provide financial advice. It enforces discipline and risk rules only.
+      </footer>
+    </main>
+  )
+}
